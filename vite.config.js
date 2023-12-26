@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     root: './src',
     build: {
+        minify: false, // отключает сжатие файлов при сборке
         outDir: './../dist',
         emptyOutDir: true,
         rollupOptions: {
