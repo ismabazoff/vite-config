@@ -13,11 +13,7 @@ export default defineConfig({
                 assetFileNames: assetInfo => {
                     const info = assetInfo.name.split('.')
                     const extType = info[info.length - 1]
-                    if (
-                        /\.(png|jpe?g|gif|svg|webp|webm|mp3)$/.test(
-                            assetInfo.name
-                        )
-                    ) {
+                    if (/\.(png|jpe?g|gif|svg|webp|webm|mp3)$/.test(assetInfo.name)) {
                         return `img/[name]-[hash].${extType}`
                     }
                     if (/\.(css)$/.test(assetInfo.name)) {
@@ -26,7 +22,6 @@ export default defineConfig({
                     if (/\.(woff|woff2|eot|ttf|otf)$/.test(assetInfo.name)) {
                         return `fonts/${extType}/[name]-[hash].${extType}`
                     }
-                    return `[name]-[hash].${extType}`
                 },
             },
         },
